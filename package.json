@@ -1,0 +1,30 @@
+{
+  "author": "J. Ryan Stinnett <jryans@gmail.com> (http://convolv.es/)",
+  "name": "timers-browserify",
+  "description": "timers module for browserify",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jryans/timers-browserify",
+  "bugs": "https://github.com/jryans/timers-browserify/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jryans/timers-browserify.git"
+  },
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "keywords": [
+    "timers",
+    "browserify",
+    "browser"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+    }
+  ]
+}
