@@ -1,3 +1,3 @@
 #!/bin/bash
 
-browserify --debug --alias 'timers:timers-browserify' -o js/browserify.js js/main.js
+browserify --debug -o js/browserify.js js/main.js
