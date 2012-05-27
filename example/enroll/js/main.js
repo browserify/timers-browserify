@@ -1,4 +1,4 @@
-var timers = require('timers-browserify');
+var timers = require('timers');
 
 var obj = {
   _onTimeout: function() {
