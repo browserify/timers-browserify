@@ -10,7 +10,9 @@
     "url": "git://github.com/jryans/timers-browserify.git"
   },
   "main": "main.js",
-  "dependencies": {},
+  "dependencies": {
+    "setimmediate": "~1.0.1"
+  },
   "devDependencies": {
     "connect": "~2.3.0",
     "browserify": "~1.10.16"
