@@ -5,6 +5,9 @@ if (typeof clearTimeout !== 'undefined') exports.clearTimeout = clearTimeout;
 if (typeof setInterval !== 'undefined') exports.setInterval = setInterval;
 if (typeof clearInterval !== 'undefined') exports.clearInterval = clearInterval;
 
+if (typeof setImmediate === 'undefined') require('setimmediate');
+exports.setImmediate = setImmediate;
+
 // TODO: Change to more effiecient list approach used in Node.js
 // For now, we just implement the APIs using the primitives above.
 
@@ -19,5 +22,3 @@ exports.unenroll = function(item) {
 exports.active = function(item) {
   // our naive impl doesn't care (correctness is still preserved)
 };
-
-exports.setImmediate = require('setimmediate');
