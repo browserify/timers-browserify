@@ -11,7 +11,7 @@
   },
   "main": "main.js",
   "dependencies": {
-    "setimmediate": "~1.0.1"
+    "process": "~0.5.1"
   },
   "devDependencies": {
     "connect": "~2.3.0",
