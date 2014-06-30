@@ -1,8 +1,8 @@
 // DOM APIs, for completeness
 
-if (typeof setTimeout !== 'undefined') exports.setTimeout = function() { setTimeout.apply(window, arguments); };
+if (typeof setTimeout !== 'undefined') exports.setTimeout = function() { return setTimeout.apply(window, arguments); };
 if (typeof clearTimeout !== 'undefined') exports.clearTimeout = function() { clearTimeout.apply(window, arguments); };
-if (typeof setInterval !== 'undefined') exports.setInterval = function() { setInterval.apply(window, arguments); };
+if (typeof setInterval !== 'undefined') exports.setInterval = function() { return setInterval.apply(window, arguments); };
 if (typeof clearInterval !== 'undefined') exports.clearInterval = function() { clearInterval.apply(window, arguments); };
 
 // TODO: Change to more effiecient list approach used in Node.js
