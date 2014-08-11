@@ -22,7 +22,7 @@ Node.js modules:
 * `unenroll(item)`
 * `active(item)`
 
-These are used to efficiently support a large quanity of timers with the same
+These are used to efficiently support a large quantity of timers with the same
 timeouts by creating only a few timers under the covers.
 
 # License
