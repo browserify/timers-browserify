@@ -9,6 +9,12 @@
     "type": "git",
     "url": "git://github.com/jryans/timers-browserify.git"
   },
+  "contributors": [
+    "Ionut-Cristian Florescu <ionut.florescu@gmail.com>",
+    "James Halliday <mail@substack.net>",
+    "Johannes Ewald <johannes.ewald@peerigon.com>",
+    "Jonathan Prins <jon@blip.tv>"
+  ],
   "main": "main.js",
   "dependencies": {
     "process": "~0.5.1"
