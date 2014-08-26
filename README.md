@@ -25,6 +25,11 @@ Node.js modules:
 These are used to efficiently support a large quantity of timers with the same
 timeouts by creating only a few timers under the covers.
 
+Node.js also offers the `immediate` APIs, which aren't yet available cross-browser, so we polyfill those:
+
+* `setImmediate(callback, [arg], [...])`
+* `clearImmediate(immediateId)`
+
 # License
 
 [MIT](http://jryans.mit-license.org/)
