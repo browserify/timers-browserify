@@ -27,28 +27,28 @@ exports.active = function(item) {
 
 // That's not how node.js implements it but the exposed api is the same.
 exports.setImmediate = function(fn) {
-    var id = nextImmediateId++;
-    var args = arguments.length < 2? false : slice.call(arguments, 1);
+  var id = nextImmediateId++;
+  var args = arguments.length < 2 ? false : slice.call(arguments, 1);
 
-    immediateIds[id] = true;
+  immediateIds[id] = true;
 
-    nextTick(function onNextTick() {
-        if (immediateIds[id]) {
-            // fn.call() is faster so we optimize for the common use-case
-            // @see http://jsperf.com/call-apply-segu
-            if (args) {
-                fn.apply(null, args);
-            } else {
-                fn.call(null);
-            }
-            // Prevent ids from leaking
-            exports.clearImmediate(id);
-        }
-    });
+  nextTick(function onNextTick() {
+    if (immediateIds[id]) {
+      // fn.call() is faster so we optimize for the common use-case
+      // @see http://jsperf.com/call-apply-segu
+      if (args) {
+        fn.apply(null, args);
+      } else {
+        fn.call(null);
+      }
+      // Prevent ids from leaking
+      exports.clearImmediate(id);
+    }
+  });
 
-    return id;
+  return id;
 };
 
 exports.clearImmediate = function(id) {
-    delete immediateIds[id];
+  delete immediateIds[id];
 };
