@@ -17,7 +17,7 @@
   ],
   "main": "main.js",
   "dependencies": {
-    "process": "~0.5.1"
+    "process": "~0.10.0"
   },
   "devDependencies": {
     "connect": "~2.3.0",
