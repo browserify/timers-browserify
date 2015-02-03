@@ -26,7 +26,7 @@ exports.active = function(item) {
 };
 
 // That's not how node.js implements it but the exposed api is the same.
-exports.setImmediate = function(fn) {
+exports.setImmediate = typeof setImmediate === "function" ? setImmediate : function(fn) {
   var id = nextImmediateId++;
   var args = arguments.length < 2 ? false : slice.call(arguments, 1);
 
@@ -49,6 +49,6 @@ exports.setImmediate = function(fn) {
   return id;
 };
 
-exports.clearImmediate = function(id) {
+exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
   delete immediateIds[id];
 };
