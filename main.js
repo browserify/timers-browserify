@@ -26,10 +26,16 @@ exports.active = function(item) {
 };
 
 // That's not how node.js implements it but the exposed api is the same.
-exports.setImmediate = function(fn) {
-  var id = nextImmediateId++;
-  var args = arguments.length < 2 ? false : slice.call(arguments, 1);
+exports.setImmediate =function(fn) {
+  var id;
+  var args;
 
+  if (typeof setImmediate === "function") {
+    return setImmediate.apply(window, arguments);
+  }
+
+  id = nextImmediateId++;
+  args = arguments.length < 2 ? false : slice.call(arguments, 1);
   immediateIds[id] = true;
 
   nextTick(function onNextTick() {
@@ -50,5 +56,8 @@ exports.setImmediate = function(fn) {
 };
 
 exports.clearImmediate = function(id) {
+  if (typeof clearImmediate === "function") {
+    return clearImmediate.apply(window, arguments);
+  }
   delete immediateIds[id];
 };
