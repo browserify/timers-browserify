@@ -13,16 +13,27 @@ if (typeof clearInterval !== 'undefined') exports.clearInterval = function() { c
 // TODO: Change to more efficient list approach used in Node.js
 // For now, we just implement the APIs using the primitives above.
 
-exports.enroll = function(item, delay) {
-  item._timeoutID = setTimeout(item._onTimeout, delay);
+// Does not start the time, just sets up the members needed.
+exports.enroll = function(item, msecs) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = msecs;
 };
 
 exports.unenroll = function(item) {
-  clearTimeout(item._timeoutID);
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = -1;
 };
 
-exports.active = function(item) {
-  // our naive impl doesn't care (correctness is still preserved)
+exports._unrefActive = exports.active = function(item) {
+  clearTimeout(item._idleTimeoutId);
+  
+  var msecs = item._idleTimeout;
+  if (msecs >= 0) {
+    item._idleTimeoutId = setTimeout(function onTimeout() {
+      if (item._onTimeout)
+        item._onTimeout();
+    }, msecs);
+  }
 };
 
 // That's not how node.js implements it but the exposed api is the same.
