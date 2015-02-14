@@ -23,9 +23,6 @@ Timeout.prototype.close = function() {
   this._clearFn.call(window, this._id);
 };
 
-// TODO: Change to more efficient list approach used in Node.js
-// For now, we just implement the APIs using the primitives above.
-
 // Does not start the time, just sets up the members needed.
 exports.enroll = function(item, msecs) {
   clearTimeout(item._idleTimeoutId);
