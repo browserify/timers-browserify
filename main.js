@@ -5,13 +5,23 @@ var nextImmediateId = 0;
 
 // DOM APIs, for completeness
 
-if (typeof setTimeout !== 'undefined') exports.setTimeout = function() { return setTimeout.apply(window, arguments); };
-if (typeof clearTimeout !== 'undefined') exports.clearTimeout = function() { clearTimeout.apply(window, arguments); };
-if (typeof setInterval !== 'undefined') exports.setInterval = function() { return setInterval.apply(window, arguments); };
-if (typeof clearInterval !== 'undefined') exports.clearInterval = function() { clearInterval.apply(window, arguments); };
+exports.setTimeout = function() {
+  return new Timeout(setTimeout.apply(window, arguments), clearTimeout);
+};
+exports.setInterval = function() {
+  return new Timeout(setInterval.apply(window, arguments), clearInterval);
+};
+exports.clearTimeout =
+exports.clearInterval = function(timeout) { timeout.close(); };
 
-// TODO: Change to more efficient list approach used in Node.js
-// For now, we just implement the APIs using the primitives above.
+function Timeout(id, clearFn) {
+  this._id = id;
+  this._clearFn = clearFn;
+}
+Timeout.prototype.unref = Timeout.prototype.ref = function() {};
+Timeout.prototype.close = function() {
+  this._clearFn.call(window, this._id);
+};
 
 // Does not start the time, just sets up the members needed.
 exports.enroll = function(item, msecs) {
