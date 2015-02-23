@@ -1,4 +1,5 @@
 var nextTick = require('process/browser.js').nextTick;
+var apply = Function.prototype.apply;
 var slice = Array.prototype.slice;
 var immediateIds = {};
 var nextImmediateId = 0;
@@ -6,10 +7,10 @@ var nextImmediateId = 0;
 // DOM APIs, for completeness
 
 exports.setTimeout = function() {
-  return new Timeout(setTimeout.apply(window, arguments), clearTimeout);
+  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
 };
 exports.setInterval = function() {
-  return new Timeout(setInterval.apply(window, arguments), clearInterval);
+  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
 };
 exports.clearTimeout =
 exports.clearInterval = function(timeout) { timeout.close(); };
@@ -36,7 +37,7 @@ exports.unenroll = function(item) {
 
 exports._unrefActive = exports.active = function(item) {
   clearTimeout(item._idleTimeoutId);
-  
+
   var msecs = item._idleTimeout;
   if (msecs >= 0) {
     item._idleTimeoutId = setTimeout(function onTimeout() {
