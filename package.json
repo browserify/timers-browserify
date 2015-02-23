@@ -13,8 +13,10 @@
     "Guy Bedford <guybedford@gmail.com>",
     "Ionut-Cristian Florescu <ionut.florescu@gmail.com>",
     "James Halliday <mail@substack.net>",
+    "Jan Schär <jscissr@gmail.com>",
     "Johannes Ewald <johannes.ewald@peerigon.com>",
-    "Jonathan Prins <jon@blip.tv>"
+    "Jonathan Prins <jon@blip.tv>",
+    "Matt Esch <matt@mattesch.info>"
   ],
   "main": "main.js",
   "dependencies": {
