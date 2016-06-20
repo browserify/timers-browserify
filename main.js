@@ -9,7 +9,11 @@ exports.setInterval = function() {
   return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
 };
 exports.clearTimeout =
-exports.clearInterval = function(timeout) { timeout.close(); };
+exports.clearInterval = function(timeout) {
+  if (timeout) {
+    timeout.close();
+  }
+};
 
 function Timeout(id, clearFn) {
   this._id = id;
