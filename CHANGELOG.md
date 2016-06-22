@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.1 - 2016-06-21
+
+### Fixed
+* `clearTimeout` and `clearInterval` no longer throws when passed null or
+  undefined instead of the timeout token.
+
 ## 2.0.0 - 2016-03-28
 
 ### Changed
