@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.2 - 2016-10-19
+
+### Added
+
+* `.npmignore` now excludes example scripts, reducing package size
+
 ## 2.0.1 - 2016-06-21
 
 ### Fixed
