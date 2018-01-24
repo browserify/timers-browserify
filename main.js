@@ -49,8 +49,8 @@ exports._unrefActive = exports.active = function(item) {
 
 // setimmediate attaches itself to the global object
 require("setimmediate");
-// on some exotic platforms the window object is not the same as the self, global or this objects.
-// look for setImmediate/clearImmediate in the "global" objects in the same order as the "setimmediate"
-// library tries to attach itself.
+// On some exotic environments, it's not clear which object `setimmeidate` was
+// able to install onto.  Search each possibility in the same order as the
+// `setimmediate` library.
 exports.setImmediate = self && self.setImmediate || global && global.setImmediate || this && this.setImmediate;
 exports.clearImmediate = self && self.clearImmediate || global && global.clearImmediate || this && this.clearImmediate;
