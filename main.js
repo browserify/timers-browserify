@@ -1,4 +1,4 @@
-var scope = this
+var scope = this;
 var apply = Function.prototype.apply;
 
 // DOM APIs, for completeness
