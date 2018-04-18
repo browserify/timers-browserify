@@ -2,7 +2,7 @@
   "author": "J. Ryan Stinnett <jryans@gmail.com> (http://convolv.es/)",
   "name": "timers-browserify",
   "description": "timers module for browserify",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "homepage": "https://github.com/jryans/timers-browserify",
   "bugs": "https://github.com/jryans/timers-browserify/issues",
   "repository": {
