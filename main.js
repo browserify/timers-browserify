@@ -1,4 +1,4 @@
-var scope = (typeof self !== "undefined" && self) || window;
+var scope = this;
 var apply = Function.prototype.apply;
 
 // DOM APIs, for completeness
