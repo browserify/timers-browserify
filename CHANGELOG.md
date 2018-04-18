@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.0.10 - 2018-04-18
+
+### Fixed
+
+* Guard `global` usage in scope to avoid reference errors
+
 ## 2.0.9 - 2018-04-17
 
 ### Fixed
