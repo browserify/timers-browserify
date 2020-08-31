@@ -29,7 +29,7 @@
     "setimmediate": "^1.0.4"
   },
   "devDependencies": {
-    "connect": "~2.3.0",
+    "connect": "~3.7.0",
     "browserify": "~1.10.16"
   },
   "optionalDependencies": {},
