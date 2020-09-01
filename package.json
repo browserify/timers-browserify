@@ -29,8 +29,8 @@
     "setimmediate": "^1.0.4"
   },
   "devDependencies": {
-    "connect": "~2.3.0",
-    "browserify": "~1.10.16"
+    "browserify": "~1.10.16",
+    "connect": "~2.30.2"
   },
   "optionalDependencies": {},
   "engines": {
